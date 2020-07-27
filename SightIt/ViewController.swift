@@ -10,14 +10,15 @@ import ARKit
 import Foundation
 import SceneKit
 import UIKit
+import os.log
 
 class ViewController: UIViewController, ARSCNViewDelegate, VirtualObjectManagerDelegate {
-
+    
     static let serialQueue = DispatchQueue(label: "com.apple.arkitexample.serialSceneKitQueue")
     
     /// The ARSession that handles tracking and 3D structure estimation
     let session = ARSession()
-
+    
     /// The virtual object manager which controls which objects have been placed into the AR session
     var virtualObjectManager: VirtualObjectManager!
     
@@ -44,9 +45,9 @@ class ViewController: UIViewController, ARSCNViewDelegate, VirtualObjectManagerD
         super.viewDidLoad()
         setupScene()
         
-        // TODO: this temperary set up tapGesture on the AR View and get the pixel location
-        // to place a virtual object on that location. We'd like this location to be the result from
-        // image detection
+        // TODO: this temporarily set up tapGesture on the AR View to get a 2D pixel location
+        // on the screen and place a virtual object in the 3D world. We'd like to obtain this location
+        // from image detection results
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleSceneTap(_:)))
         sceneView.addGestureRecognizer(tapGesture)
     }
@@ -67,30 +68,30 @@ class ViewController: UIViewController, ARSCNViewDelegate, VirtualObjectManagerD
             resetTracking()
         } else {
             // This device does not support 6DOF world tracking.
-//            let sessionErrorMsg = "This app requires world tracking. World tracking is only available on iOS devices with A9 processor or newer. " +
-//            "Please quit the application."
-//            displayErrorMessage(title: "Unsupported platform", message: sessionErrorMsg, allowRestart: false)
+            os_log(.error, "This device does not support 6DOF world tracking.")
+            
+            // TODO: Display/announce some message to the user
+            //            let sessionErrorMsg = "This app requires world tracking. World tracking is only available on iOS devices with A9 processor or newer. " +
+            //            "Please quit the application."
+            //            displayErrorMessage(title: "Unsupported platform", message: sessionErrorMsg, allowRestart: false)
         }
-//        synth.delegate = self
-//        NotificationCenter.default.addObserver(forName: NSNotification.Name.UIAccessibilityAnnouncementDidFinish, object: nil, queue: nil) { (notification) -> Void in
-//            self.isReadingAnnouncement = false
-//        }
     }
     
-    // TODO: This function is temporarily added to place virtual object upon scene tapped
+    /// TODO: This function is temporarily added to place virtual object upon scene tapped
     @objc func handleSceneTap(_ gesture: UITapGestureRecognizer) {
         guard gesture.view != nil else { return }
-             
+        
         if gesture.state == .ended {      // Move the view down and to the right when tapped.
-            print("User tapped the scene at x: \(gesture.view!.center.x), y: \(gesture.view!.center.y)")
-            placeVirtualObject(pixelLocation: CGPoint(x: gesture.view!.center.x, y: gesture.view!.center.y), frameTransform: nil)
+            os_log(.debug, "User tapped the scene at x: %{public}@, y: %{public}@", gesture.view!.center.x, gesture.view!.center.y)
+            placeVirtualObject(pixelLocation: CGPoint(x: gesture.view!.center.x, y: gesture.view!.center.y), overrideFrameTransform: nil)
         }
     }
     
     /// Resets (or starts) the tracking session
     func resetTracking() {
-        // get rid of any jobs we're waiting on
-//        jobs.removeAll()
+        // TODO: would probably have a queue of image detection jobs here.
+        // We want to get rid of any jobs we're waiting on
+        //        jobs.removeAll()
         session.run(standardConfiguration, options: [.resetTracking, .removeExistingAnchors])
         
         // reset timer
@@ -100,8 +101,13 @@ class ViewController: UIViewController, ARSCNViewDelegate, VirtualObjectManagerD
         }
     }
     
-    // Place a virtual object at a particular position
-    func placeVirtualObject(pixelLocation: CGPoint, frameTransform: matrix_float4x4?) {
+    /// Place a virtual object at a particular position
+    ///
+    /// - Parameters:
+    ///   - pixelLocation: the point (2D) to use for creating the ray
+    ///   - overrideFrameTransform: if set, use the specified frame transform instead
+    ///        of the one of the current frame.
+    func placeVirtualObject(pixelLocation: CGPoint, overrideFrameTransform frameTransform: matrix_float4x4?) {
         guard let transform = (frameTransform != nil) ? frameTransform : session.currentFrame?.camera.transform else {
             return
         }
@@ -112,19 +118,20 @@ class ViewController: UIViewController, ARSCNViewDelegate, VirtualObjectManagerD
                                                                                          in: self.sceneView,
                                                                                          frame_transform: transform,
                                                                                          objectPos: nil)
-
+        
         if worldPos != nil {
-            print("Hit test successfully")
+            os_log(.debug, "Hit test successfully")
             // Place the cube with the floating label of the job into the scene and announce that the object has been found to the user
             self.virtualObjectManager.loadVirtualObject(object, to: worldPos!, cameraTransform: transform)
-
+            
             if object.parent == nil {
                 ViewController.serialQueue.async {
                     self.sceneView.scene.rootNode.addChildNode(object)
+                    os_log(.debug, "Found the object!")
                 }
             }
         } else {
-            print("worldPos is nil")
+            os_log(.error, "Failed to place virtual object. worldPos is nil")
         }
     }
     
@@ -136,19 +143,19 @@ class ViewController: UIViewController, ARSCNViewDelegate, VirtualObjectManagerD
     ///   - camera: the camera object
     func session(_ session: ARSession, cameraDidChangeTrackingState camera: ARCamera) {
         switch camera.trackingState {
-            case .notAvailable:
-                print("AR session is not available")
+        case .notAvailable:
+            os_log(.error, "AR session is not available")
         case .limited:
-                print("AR session is limited")
-                // After 10 seconds of limited quality, restart the session
-                sessionRestartTimer = Timer.scheduledTimer(withTimeInterval: 10.0, repeats: false, block: { _ in
-                })
-            case .normal:
-                print("AR session is normal")
-                if sessionRestartTimer != nil {
-                    sessionRestartTimer!.invalidate()
-                    sessionRestartTimer = nil
-                }
+            os_log(.error, "AR session is limited")
+            // After 10 seconds of limited quality, restart the session
+            sessionRestartTimer = Timer.scheduledTimer(withTimeInterval: 10.0, repeats: false, block: { _ in
+            })
+        case .normal:
+            os_log(.debug, "AR session is normal")
+            if sessionRestartTimer != nil {
+                sessionRestartTimer!.invalidate()
+                sessionRestartTimer = nil
+            }
         }
     }
     
@@ -162,14 +169,14 @@ class ViewController: UIViewController, ARSCNViewDelegate, VirtualObjectManagerD
     func virtualObjectManager(_ manager: VirtualObjectManager, willLoad object: VirtualObject) {
         DispatchQueue.main.async {
             // Show progress indicator
-//            self.spinner = UIActivityIndicatorView()
-//            self.spinner!.center = self.addObjectButton.center
-//            self.spinner!.bounds.size = CGSize(width: self.addObjectButton.bounds.width - 5, height: self.addObjectButton.bounds.height - 5)
-//            self.addObjectButton.setImage(#imageLiteral(resourceName: "buttonring"), for: [])
-//            self.sceneView.addSubview(self.spinner!)
-//            self.spinner!.startAnimating()
-//
-//            self.isLoadingObject = true
+            //            self.spinner = UIActivityIndicatorView()
+            //            self.spinner!.center = self.addObjectButton.center
+            //            self.spinner!.bounds.size = CGSize(width: self.addObjectButton.bounds.width - 5, height: self.addObjectButton.bounds.height - 5)
+            //            self.addObjectButton.setImage(#imageLiteral(resourceName: "buttonring"), for: [])
+            //            self.sceneView.addSubview(self.spinner!)
+            //            self.spinner!.startAnimating()
+            //
+            //            self.isLoadingObject = true
         }
     }
     
@@ -180,12 +187,12 @@ class ViewController: UIViewController, ARSCNViewDelegate, VirtualObjectManagerD
     ///   - object: the virtual object that has just loaded
     func virtualObjectManager(_ manager: VirtualObjectManager, didLoad object: VirtualObject) {
         DispatchQueue.main.async {
-//            self.isLoadingObject = false
-//
-//            // Remove progress indicator
-//            self.spinner?.removeFromSuperview()
-//            self.addObjectButton.setImage(#imageLiteral(resourceName: "add"), for: [])
-//            self.addObjectButton.setImage(#imageLiteral(resourceName: "addPressed"), for: [.highlighted])
+            //            self.isLoadingObject = false
+            //
+            //            // Remove progress indicator
+            //            self.spinner?.removeFromSuperview()
+            //            self.addObjectButton.setImage(#imageLiteral(resourceName: "add"), for: [])
+            //            self.addObjectButton.setImage(#imageLiteral(resourceName: "addPressed"), for: [.highlighted])
         }
     }
     
