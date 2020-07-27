@@ -8,6 +8,7 @@
 
 import Foundation
 import ARKit
+import simd
 
 // MARK: - Collection extensions
 extension Array where Iterator.Element == Float {
@@ -84,41 +85,43 @@ extension float4x4 {
     }
 }
 
-/// A subclass of SCNNode that stores the position an orientation of a plane (as tracked by an ARSession)
-class Plane: SCNNode {
-    
-    // MARK: - Properties
-    
-    /// The anchor in the ARSession (this contains things like position and orientation of the plane)
-    var anchor: ARPlaneAnchor
-    
-    // MARK: - Initialization
-    
-    /// Initialize a new plane given an ARPlaneAnchor
-    ///
-    /// - Parameter anchor: the plane anchor
-    init(_ anchor: ARPlaneAnchor) {
-        self.anchor = anchor
-        super.init()
-    }
-    
-    /// This hasn't been implemented.
-    ///
-    /// - Parameter aDecoder: the coder object
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    // MARK: - ARKit
-    
-    /// Update the plane anchor (usually in response to some notification from ARSession)
-    ///
-    /// - Parameter anchor: the new plane parameters
-    func update(_ anchor: ARPlaneAnchor) {
-        self.anchor = anchor
-    }
-        
-}
+///// A subclass of SCNNode that stores the position an orientation of a plane (as tracked by an ARSession)
+//class Plane: SCNNode {
+//    
+//    // MARK: - Properties
+//    
+//    /// The anchor in the ARSession (this contains things like position and orientation of the plane)
+//    var anchor: ARPlaneAnchor
+//    
+//    // MARK: - Initialization
+//    
+//    /// Initialize a new plane given an ARPlaneAnchor
+//    ///
+//    /// - Parameter anchor: the plane anchor
+//    init(_ anchor: ARPlaneAnchor) {
+//        self.anchor = anchor
+//        super.init()
+//    }
+//    
+//    /// This hasn't been implemented.
+//    ///
+//    /// - Parameter aDecoder: the coder object
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
+//    
+//    // MARK: - ARKit
+//    
+//    /// Update the plane anchor (usually in response to some notification from ARSession)
+//    ///
+//    /// - Parameter anchor: the new plane parameters
+//    func update(_ anchor: ARPlaneAnchor) {
+//        self.anchor = anchor
+//    }
+//        
+//}
+
+
 
 // MARK: - CGPoint extensions
 extension CGPoint {
@@ -373,4 +376,45 @@ func rayIntersectionWithHorizontalPlane(rayOrigin: SIMD3<Float>, direction: SIMD
     
     // Return the intersection point.
     return rayOrigin + (direction * dist)
+}
+
+
+
+@available(iOS 12.0, *)
+extension ARPlaneAnchor.Classification {
+    var description: String {
+        switch self {
+        case .wall:
+            return "Wall"
+        case .floor:
+            return "Floor"
+        case .ceiling:
+            return "Ceiling"
+        case .table:
+            return "Table"
+        case .seat:
+            return "Seat"
+        case .none(.unknown):
+            return "Unknown"
+        default:
+            return ""
+        }
+    }
+}
+
+extension SCNNode {
+    func centerAlign() {
+        let (min, max) = boundingBox
+        let extents = float3(max) - float3(min)
+        simdPivot = float4x4(translation: ((extents / 2) + float3(min)))
+    }
+}
+
+extension float4x4 {
+    init(translation vector: float3) {
+        self.init(float4(1, 0, 0, 0),
+                  float4(0, 1, 0, 0),
+                  float4(0, 0, 1, 0),
+                  float4(vector.x, vector.y, vector.z, 1))
+    }
 }

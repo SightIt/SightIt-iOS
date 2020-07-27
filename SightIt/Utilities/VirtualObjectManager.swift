@@ -39,6 +39,8 @@ class VirtualObjectManager {
     func addPlane(plane: Plane) {
         // add the plane so we can do our own custom hit testing later
         planes.append(plane)
+      
+      print("Number of planes: \(planes.count)")
     }
     
     /// Remove a plane
@@ -47,6 +49,13 @@ class VirtualObjectManager {
     func removePlane(anchor: ARPlaneAnchor) {
         // remove the plane since it is no longer valid
         planes = planes.filter { $0.anchor != anchor }
+    }
+  
+    ///Update a plane
+    func updatePlane(anchor: ARPlaneAnchor) {
+//      planes = planes.map({ (plane) -> Plane in
+//        
+//      })
     }
     
     /// Remove the specified virtual object from the scene
