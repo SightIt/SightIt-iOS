@@ -25,6 +25,9 @@ class ViewController: UIViewController, VirtualObjectManagerDelegate {
     /// A timer to coordinate restarting the ARSession if tracking has been bad for more than 10 seconds.
     var sessionRestartTimer: Timer?
     
+    /// AVSpeechSynthesizer for speech feedback
+    let synth = AVSpeechSynthesizer()
+    
     /// The main view that captures the AR scene and controls world tracking
     @IBOutlet weak var sceneView: ARSCNView!
     
@@ -46,7 +49,7 @@ class ViewController: UIViewController, VirtualObjectManagerDelegate {
         setupScene()
         
         detectObjectSample()
-        
+        announce(announcement: "This is a test message")
         // TODO: this temporarily set up tapGesture on the AR View to get a 2D pixel location
         // on the screen and place a virtual object in the 3D world. We'd like to obtain this location
         // from image detection results
@@ -189,6 +192,27 @@ class ViewController: UIViewController, VirtualObjectManagerDelegate {
         sceneView.delegate = self
         sceneView.session = session
         sceneView.showsStatistics = false
+    }
+    
+    /// Communicates a message to the user via speech.  If VoiceOver is active, then VoiceOver is used
+    /// to communicate the announcement, otherwise we use the AVSpeechEngine
+    ///
+    /// - Parameter announcement: the text to read to the user
+    func announce(announcement: String) {
+        if synth.isSpeaking {
+            return
+        }
+
+        let audioSession = AVAudioSession.sharedInstance()
+        do {
+            try audioSession.setCategory(AVAudioSession.Category.playback)
+            try audioSession.setActive(false, options: .notifyOthersOnDeactivation)
+            let utterance = AVSpeechUtterance(string: announcement)
+            utterance.rate = 0.6
+            synth.speak(utterance)
+        } catch {
+            os_log(.error, "Unexpeced error announcing something using AVSpeechEngine!")
+        }
     }
     
     func detectObjectSample() {
