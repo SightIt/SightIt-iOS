@@ -241,11 +241,6 @@ extension ViewController : ARSCNViewDelegate {
     /// - Tag: UpdateARContent
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         
-        if let node = node as? VirtualObject {
-            print("hi there \(node)")
-        }
-        
-        
         // Update only anchors and nodes set up by `renderer(_:didAdd:for:)`.
         guard let planeAnchor = anchor as? ARPlaneAnchor,
             let plane = node.childNodes.first as? Plane
