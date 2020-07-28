@@ -45,6 +45,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, VirtualObjectManagerD
         super.viewDidLoad()
         setupScene()
         
+        detectObjectSample()
+        
         // TODO: this temporarily set up tapGesture on the AR View to get a 2D pixel location
         // on the screen and place a virtual object in the 3D world. We'd like to obtain this location
         // from image detection results
@@ -207,6 +209,14 @@ class ViewController: UIViewController, ARSCNViewDelegate, VirtualObjectManagerD
         sceneView.delegate = self
         sceneView.session = session
         sceneView.showsStatistics = false
+    }
+    
+    func detectObjectSample() {
+        let objDetectionManager = ObjectDetectionManager()
+        objDetectionManager.detectObjects(image: UIImage(named: "object1")!, objectToFind: .plate) { (response, error) in
+            print(response?.bestPrediction?.tagName)
+            print(response?.predictions?.count)
+        }
     }
 }
 
