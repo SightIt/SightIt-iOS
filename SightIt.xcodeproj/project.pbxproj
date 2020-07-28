@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8479709524CFF79500B7BFFF /* azure-custom-vision.json in Resources */ = {isa = PBXBuildFile; fileRef = 8479709424CFF79500B7BFFF /* azure-custom-vision.json */; };
 		84B99E2F24CE6D58006FDBC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B99E2E24CE6D58006FDBC0 /* AppDelegate.swift */; };
 		84B99E3124CE6D58006FDBC0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B99E3024CE6D58006FDBC0 /* SceneDelegate.swift */; };
 		84B99E3324CE6D58006FDBC0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B99E3224CE6D58006FDBC0 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 		84B99E6624CE74BB006FDBC0 /* VirtualObjectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B99E6524CE74BB006FDBC0 /* VirtualObjectManager.swift */; };
 		C71D1FD624CF83BF00894513 /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71D1FD524CF83BF00894513 /* Plane.swift */; };
 		C71D1FD824CF87A400894513 /* Assets.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = C71D1FD724CF87A400894513 /* Assets.scnassets */; };
+		84F4C85324CFB3FF00CA33D4 /* ObjectDetectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4C85224CFB3FF00CA33D4 /* ObjectDetectionManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8479709424CFF79500B7BFFF /* azure-custom-vision.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "azure-custom-vision.json"; sourceTree = "<group>"; };
 		84B99E2B24CE6D58006FDBC0 /* SightIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SightIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B99E2E24CE6D58006FDBC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84B99E3024CE6D58006FDBC0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +64,7 @@
 		84B99E6524CE74BB006FDBC0 /* VirtualObjectManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObjectManager.swift; sourceTree = "<group>"; };
 		C71D1FD524CF83BF00894513 /* Plane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
 		C71D1FD724CF87A400894513 /* Assets.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Assets.scnassets; sourceTree = "<group>"; };
+		84F4C85224CFB3FF00CA33D4 /* ObjectDetectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDetectionManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,7 @@
 		84B99E2224CE6D58006FDBC0 = {
 			isa = PBXGroup;
 			children = (
+				8479709424CFF79500B7BFFF /* azure-custom-vision.json */,
 				84B99E2D24CE6D58006FDBC0 /* SightIt */,
 				84B99E4424CE6D5B006FDBC0 /* SightItTests */,
 				84B99E4F24CE6D5B006FDBC0 /* SightItUITests */,
@@ -150,6 +155,7 @@
 				84B99E6124CE727C006FDBC0 /* Utilities.swift */,
 				84B99E6324CE744F006FDBC0 /* VirtualObject.swift */,
 				84B99E6524CE74BB006FDBC0 /* VirtualObjectManager.swift */,
+				84F4C85224CFB3FF00CA33D4 /* ObjectDetectionManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -259,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C71D1FD824CF87A400894513 /* Assets.scnassets in Resources */,
+				8479709524CFF79500B7BFFF /* azure-custom-vision.json in Resources */,
 				84B99E3B24CE6D5A006FDBC0 /* LaunchScreen.storyboard in Resources */,
 				84B99E3824CE6D5A006FDBC0 /* Assets.xcassets in Resources */,
 				84B99E3624CE6D58006FDBC0 /* Main.storyboard in Resources */,
@@ -286,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F4C85324CFB3FF00CA33D4 /* ObjectDetectionManager.swift in Sources */,
 				84B99E6024CE70A6006FDBC0 /* ARSCNView.swift in Sources */,
 				84B99E3324CE6D58006FDBC0 /* ViewController.swift in Sources */,
 				84B99E6424CE744F006FDBC0 /* VirtualObject.swift in Sources */,
