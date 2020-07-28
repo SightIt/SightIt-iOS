@@ -39,6 +39,8 @@ class VirtualObjectManager {
     func addPlane(plane: Plane) {
         // add the plane so we can do our own custom hit testing later
         planes.append(plane)
+        
+        print("Number of planes: \(planes.count)")
     }
     
     /// Remove a plane
@@ -48,6 +50,7 @@ class VirtualObjectManager {
         // remove the plane since it is no longer valid
         planes = planes.filter { $0.anchor != anchor }
     }
+
     
     /// Remove the specified virtual object from the scene
     ///
@@ -103,7 +106,7 @@ class VirtualObjectManager {
             cameraToPosition = simd_normalize(cameraToPosition)
             cameraToPosition *= 10
         }
-
+        
         object.simdPosition = cameraWorldPos + cameraToPosition
     }
     
@@ -169,7 +172,7 @@ class VirtualObjectManager {
         
         return (distanceToUser, angleDegrees, object.scale.x)
     }
-
+    
     /// Attempt to compute the coordinates of an object (as specified by a 2D pixel location) in the world
     /// coordinate system.  This function assumes that we only have one localization of the object.
     /// If we have two (ideally from the same user), we can use worldPositionFromStereoScreenPosition.
@@ -197,7 +200,7 @@ class VirtualObjectManager {
         var worldCoordinatesForPlaneHit: SIMD3<Float>?
         var planeAnchorForPlaneHit: ARPlaneAnchor?
         var closestPlane:Float?
-
+        
         for plane in planes {
             guard let sceneNode = sceneView.node(for: plane.anchor) else {
                 continue
@@ -206,7 +209,7 @@ class VirtualObjectManager {
             let newDirection = sceneNode.convertVector(SCNVector3(ray.direction), from: sceneView.scene.rootNode)
             // in the plane's local coordinate system, the normal always points in the positive y direction
             let distanceToPlane = -newOrigin.y / newDirection.y
-
+            
             if distanceToPlane > 0 && (closestPlane == nil || distanceToPlane < closestPlane!) {
                 let collisionPointInPlaneCoordinateSystem = SCNVector3(x: newOrigin.x + distanceToPlane*newDirection.x,
                                                                        y: newOrigin.y + distanceToPlane*newDirection.y,
@@ -214,7 +217,7 @@ class VirtualObjectManager {
                 if abs(collisionPointInPlaneCoordinateSystem.x - plane.anchor.center.x) <= plane.anchor.extent.x/2.0 &&
                     abs(collisionPointInPlaneCoordinateSystem.z - plane.anchor.center.z) <= plane.anchor.extent.z/2.0 {
                     closestPlane = distanceToPlane
-
+                    
                     worldCoordinatesForPlaneHit = SIMD3<Float>(sceneView.scene.rootNode.convertPosition(collisionPointInPlaneCoordinateSystem, from: sceneNode))
                     planeAnchorForPlaneHit = plane.anchor
                 }
@@ -224,11 +227,11 @@ class VirtualObjectManager {
             print("Found the point on the plane", worldCoordinatesForPlaneHit!)
             return (worldCoordinatesForPlaneHit, planeAnchorForPlaneHit, true)
         }
-
+        
         // -------------------------------------------------------------------------------
         // 2. Collect more information about the environment by hit testing against
         //    the feature point cloud. (currenty unsupported, but might be worth revisiting)
-    
+        
         return (nil, nil, false)
     }
     
@@ -255,9 +258,9 @@ class VirtualObjectManager {
         // far from a plane hit, you should default to the feature point, else use the plane.
         guard let ray1 = sceneView.hitTestRayFromScreenPos(pixel_location_1, overrideFrameTransform: frame_transform_1),
             let ray2 = sceneView.hitTestRayFromScreenPos(pixel_location_2, overrideFrameTransform: frame_transform_2) else {
-            return (nil, nil, false)
+                return (nil, nil, false)
         }
-
+        
         // compute closest point between the two rays using the method described here: http://morroworks.com/Content/Docs/Rays%20closest%20point.pdf
         let A = ray1.origin
         let B = ray2.origin
@@ -281,21 +284,21 @@ protocol VirtualObjectManagerDelegate: class {
     ///   - manager: the virtual object manager
     ///   - object: the virtual object that is going to load
     func virtualObjectManager(_ manager: VirtualObjectManager, willLoad object: VirtualObject)
-
+    
     /// Called when a virtual object is done loading
     ///
     /// - Parameters:
     ///   - manager: the virtual object manager
     ///   - object: the virtual object that finished loading
     func virtualObjectManager(_ manager: VirtualObjectManager, didLoad object: VirtualObject)
-
+    
     /// Called when an object's transform changes (e.g., due to it moving)
     ///
     /// - Parameters:
     ///   - manager: the virtual object manager
     ///   - object: the object that has a new transform
     func virtualObjectManager(_ manager: VirtualObjectManager, transformDidChangeFor object: VirtualObject)
-
+    
     /// Called when an object that was previously placed is moved onto a Plane
     ///
     /// - Parameters:
@@ -313,7 +316,7 @@ extension VirtualObjectManagerDelegate {
     ///   - manager: the virtual object manager
     ///   - object: the object that has a new transform
     func virtualObjectManager(_ manager: VirtualObjectManager, transformDidChangeFor object: VirtualObject) {}
-
+    
     /// Called when an object that was previously placed is moved onto a Plane
     /// The default implementation does nothing
     ///

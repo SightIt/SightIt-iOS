@@ -20,6 +20,8 @@
 		84B99E6224CE727C006FDBC0 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B99E6124CE727C006FDBC0 /* Utilities.swift */; };
 		84B99E6424CE744F006FDBC0 /* VirtualObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B99E6324CE744F006FDBC0 /* VirtualObject.swift */; };
 		84B99E6624CE74BB006FDBC0 /* VirtualObjectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B99E6524CE74BB006FDBC0 /* VirtualObjectManager.swift */; };
+		C71D1FD624CF83BF00894513 /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71D1FD524CF83BF00894513 /* Plane.swift */; };
+		C71D1FD824CF87A400894513 /* Assets.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = C71D1FD724CF87A400894513 /* Assets.scnassets */; };
 		84F4C85324CFB3FF00CA33D4 /* ObjectDetectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4C85224CFB3FF00CA33D4 /* ObjectDetectionManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +62,8 @@
 		84B99E6124CE727C006FDBC0 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		84B99E6324CE744F006FDBC0 /* VirtualObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObject.swift; sourceTree = "<group>"; };
 		84B99E6524CE74BB006FDBC0 /* VirtualObjectManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObjectManager.swift; sourceTree = "<group>"; };
+		C71D1FD524CF83BF00894513 /* Plane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
+		C71D1FD724CF87A400894513 /* Assets.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Assets.scnassets; sourceTree = "<group>"; };
 		84F4C85224CFB3FF00CA33D4 /* ObjectDetectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDetectionManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,8 +122,10 @@
 				84B99E3224CE6D58006FDBC0 /* ViewController.swift */,
 				84B99E3424CE6D58006FDBC0 /* Main.storyboard */,
 				84B99E3724CE6D5A006FDBC0 /* Assets.xcassets */,
+				C71D1FD724CF87A400894513 /* Assets.scnassets */,
 				84B99E3924CE6D5A006FDBC0 /* LaunchScreen.storyboard */,
 				84B99E3C24CE6D5A006FDBC0 /* Info.plist */,
+				C71D1FD524CF83BF00894513 /* Plane.swift */,
 			);
 			path = SightIt;
 			sourceTree = "<group>";
@@ -258,6 +264,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C71D1FD824CF87A400894513 /* Assets.scnassets in Resources */,
 				8479709524CFF79500B7BFFF /* azure-custom-vision.json in Resources */,
 				84B99E3B24CE6D5A006FDBC0 /* LaunchScreen.storyboard in Resources */,
 				84B99E3824CE6D5A006FDBC0 /* Assets.xcassets in Resources */,
@@ -293,6 +300,7 @@
 				84B99E2F24CE6D58006FDBC0 /* AppDelegate.swift in Sources */,
 				84B99E6224CE727C006FDBC0 /* Utilities.swift in Sources */,
 				84B99E3124CE6D58006FDBC0 /* SceneDelegate.swift in Sources */,
+				C71D1FD624CF83BF00894513 /* Plane.swift in Sources */,
 				84B99E6624CE74BB006FDBC0 /* VirtualObjectManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,7 +475,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FSXU3ULUBE;
+				DEVELOPMENT_TEAM = UBF8T346G9;
 				INFOPLIST_FILE = SightIt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -485,7 +493,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FSXU3ULUBE;
+				DEVELOPMENT_TEAM = UBF8T346G9;
 				INFOPLIST_FILE = SightIt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

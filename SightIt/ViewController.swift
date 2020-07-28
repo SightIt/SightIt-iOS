@@ -12,7 +12,7 @@ import SceneKit
 import UIKit
 import os.log
 
-class ViewController: UIViewController, ARSCNViewDelegate, VirtualObjectManagerDelegate {
+class ViewController: UIViewController, VirtualObjectManagerDelegate {
     
     static let serialQueue = DispatchQueue(label: "com.apple.arkitexample.serialSceneKitQueue")
     
@@ -84,7 +84,9 @@ class ViewController: UIViewController, ARSCNViewDelegate, VirtualObjectManagerD
         guard gesture.view != nil else { return }
         
         if gesture.state == .ended {      // Move the view down and to the right when tapped.
-            os_log(.debug, "User tapped the scene at x: %{public}@, y: %{public}@", gesture.view!.center.x, gesture.view!.center.y)
+            //            os_log(.debug, "User tapped the scene at x: %{public}@, y: %{public}@", gesture.view!.center.x, gesture.view!.center.y)
+            self.virtualObjectManager.removeAllVirtualObjects()
+            
             placeVirtualObject(pixelLocation: CGPoint(x: gesture.view!.center.x, y: gesture.view!.center.y), overrideFrameTransform: nil)
         }
     }
@@ -137,29 +139,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, VirtualObjectManagerD
         }
     }
     
-    /// Listen for any state changes to the ARSession.
-    /// This is useful for doing things like restarting a session after bad tracking and communicating warning messages to the user.
-    ///
-    /// - Parameters:
-    ///   - session: the session object itself
-    ///   - camera: the camera object
-    func session(_ session: ARSession, cameraDidChangeTrackingState camera: ARCamera) {
-        switch camera.trackingState {
-        case .notAvailable:
-            os_log(.error, "AR session is not available")
-        case .limited:
-            os_log(.error, "AR session is limited")
-            // After 10 seconds of limited quality, restart the session
-            sessionRestartTimer = Timer.scheduledTimer(withTimeInterval: 10.0, repeats: false, block: { _ in
-            })
-        case .normal:
-            os_log(.debug, "AR session is normal")
-            if sessionRestartTimer != nil {
-                sessionRestartTimer!.invalidate()
-                sessionRestartTimer = nil
-            }
-        }
-    }
+    
     
     // MARK: - VirtualObjectManager delegate callbacks
     
@@ -219,4 +199,93 @@ class ViewController: UIViewController, ARSCNViewDelegate, VirtualObjectManagerD
         }
     }
 }
+
+
+extension ViewController : ARSCNViewDelegate {
+    /// Listen for any state changes to the ARSession.
+    /// This is useful for doing things like restarting a session after bad tracking and communicating warning messages to the user.
+    ///
+    /// - Parameters:
+    ///   - session: the session object itself
+    ///   - camera: the camera object
+    func session(_ session: ARSession, cameraDidChangeTrackingState camera: ARCamera) {
+        switch camera.trackingState {
+        case .notAvailable:
+            os_log(.error, "AR session is not available")
+        case .limited:
+            os_log(.error, "AR session is limited")
+            // After 10 seconds of limited quality, restart the session
+            sessionRestartTimer = Timer.scheduledTimer(withTimeInterval: 10.0, repeats: false, block: { _ in
+            })
+        case .normal:
+            os_log(.debug, "AR session is normal")
+            if sessionRestartTimer != nil {
+                sessionRestartTimer!.invalidate()
+                sessionRestartTimer = nil
+            }
+        }
+    }
+    
+    
+    /// - Tag: PlaceARContent
+    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        // Place content only for anchors found by plane detection.
+        guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
+        
+        // Create a custom object to visualize the plane geometry and extent.
+        let plane = Plane(anchor: planeAnchor, in: sceneView)
+        
+        // Add the visualization to the ARKit-managed node so that it tracks
+        // changes in the plane anchor as plane estimation continues.
+        node.addChildNode(plane)
+        
+        self.virtualObjectManager.addPlane(plane: plane)
+    }
+    
+    func sessionInterruptionEnded(_ session: ARSession) {
+        // Reset tracking and/or remove existing anchors if consistent tracking is required.
+        resetTracking()
+    }
+    
+    
+    /// - Tag: UpdateARContent
+    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+        
+        // Update only anchors and nodes set up by `renderer(_:didAdd:for:)`.
+        guard let planeAnchor = anchor as? ARPlaneAnchor,
+            let plane = node.childNodes.first as? Plane
+            else { return }
+        
+        // Update ARSCNPlaneGeometry to the anchor's new estimated shape.
+        if let planeGeometry = plane.meshNode.geometry as? ARSCNPlaneGeometry {
+            planeGeometry.update(from: planeAnchor.geometry)
+        }
+        
+        // Update extent visualization to the anchor's new bounding rectangle.
+        if let extentGeometry = plane.extentNode.geometry as? SCNPlane {
+            extentGeometry.width = CGFloat(planeAnchor.extent.x)
+            extentGeometry.height = CGFloat(planeAnchor.extent.z)
+            plane.extentNode.simdPosition = planeAnchor.center
+        }
+        
+        
+        
+        
+        // Update the plane's classification and the text position
+        if #available(iOS 12.0, *),
+            let classificationNode = plane.classificationNode,
+            let classificationGeometry = classificationNode.geometry as? SCNText {
+            let currentClassification = planeAnchor.classification.description
+            if let oldClassification = classificationGeometry.string as? String, oldClassification != currentClassification {
+                classificationGeometry.string = currentClassification
+                classificationNode.centerAlign()
+            }
+        }
+        
+    }
+    
+    
+}
+
+
 
