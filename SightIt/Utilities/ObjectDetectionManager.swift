@@ -130,21 +130,21 @@ class ObjectDetectionManager {
         let maxDimensionGFloat = CGFloat(maxDimension)
         
         var newSize: CGSize
-        if(size.width > size.height) {
+        if size.width > size.height {
             newSize = CGSize(width: maxDimensionGFloat, height: size.height * maxDimensionGFloat / size.width)
         } else {
             newSize = CGSize(width: size.width * maxDimensionGFloat / size.height,  height: maxDimensionGFloat)
         }
-    
+        
         // This is the rect that we've calculated out and this is what is actually used below
         let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
-    
+        
         // Actually do the resizing to the rect using the ImageContext stuff
         UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
         image.draw(in: rect)
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-    
+        
         return newImage!
     }
 }
@@ -187,7 +187,7 @@ class PredictionResult: Decodable {
             if boundingBox?.left == nil || boundingBox?.width == nil {
                 return nil
             }
-            return boundingBox!.left! + boundingBox!.width!
+            return boundingBox!.left! + boundingBox!.width! / 2
         }
     }
     
@@ -197,7 +197,7 @@ class PredictionResult: Decodable {
             if boundingBox?.top == nil || boundingBox?.height == nil {
                 return nil
             }
-            return boundingBox!.top! + boundingBox!.height!
+            return boundingBox!.top! + boundingBox!.height! / 2
         }
     }
 }
