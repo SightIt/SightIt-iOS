@@ -18,3 +18,6 @@ The project has 3 main parts:
 
 ## What's next
 We'd like to continue improving the MVP and bring this product to the B/VI communities for user testing. Right now, the app is able to detect only a small set of objects and will not allow users to recognize custom objects of their own. Therefore, possible next steps could be expanding the list of common objects and adding the capacity for users to train their own items. Furthermore, users might want to detect multiple objects at once and track their dynamic locations in real time. This use case is technologically challenging, and we might want to talk to users and explore their needs to clearly define this feature.
+
+## Credit
+This project is based off of an open-source project, [ObjectLocator](https://github.com/occamLab/ObjectLocator).
