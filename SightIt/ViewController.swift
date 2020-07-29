@@ -11,7 +11,6 @@ import Foundation
 import SceneKit
 import UIKit
 import VectorMath
-import os.log
 
 class ViewController: UIViewController, VirtualObjectManagerDelegate {
     
@@ -94,7 +93,7 @@ class ViewController: UIViewController, VirtualObjectManagerDelegate {
             resetTracking()
         } else {
             // This device does not support 6DOF world tracking.
-            os_log(.error, "This device does not support 6DOF world tracking.")
+            print("This device does not support 6DOF world tracking.")
             
             // TODO: Display/announce some message to the user
             //            let sessionErrorMsg = "This app requires world tracking. World tracking is only available on iOS devices with A9 processor or newer. " +
@@ -130,7 +129,7 @@ class ViewController: UIViewController, VirtualObjectManagerDelegate {
     @objc func takeSnapshot(sender: Timer) {
         // make sure we have a valid frame and a valid job without a placement
         guard let currentTransform = session.currentFrame?.camera.transform else {
-            os_log(.error, "Cannot find camera transform")
+            print("Cannot find camera transform")
             return
         }
         
@@ -142,7 +141,7 @@ class ViewController: UIViewController, VirtualObjectManagerDelegate {
                 return
             }
             
-            os_log(.debug, "Receiving best prediction")
+            print("Receiving best prediction")
             self.placeVirtualObject(pixelLocation: CGPoint(x: CGFloat(x), y: CGFloat(y)), overrideFrameTransform: currentTransform, objectToFind: self.objectToFind)
         }
     }
@@ -180,7 +179,7 @@ class ViewController: UIViewController, VirtualObjectManagerDelegate {
                                                                                          objectPos: nil)
         
         if worldPos != nil {
-            os_log(.debug, "Hit test successfully")
+            print("Hit test successfully")
             
             // Stop sending image to Azure
             self.snapshotTimer?.invalidate()
@@ -191,11 +190,11 @@ class ViewController: UIViewController, VirtualObjectManagerDelegate {
             if object.parent == nil {
                 ViewController.serialQueue.async {
                     self.sceneView.scene.rootNode.addChildNode(object)
-                    os_log(.debug, "Found the object!")
+                    print("Found the object!")
                 }
             }
         } else {
-            os_log(.error, "Failed to place virtual object. worldPos is nil")
+            print("Failed to place virtual object. worldPos is nil")
         }
     }
     
@@ -322,7 +321,7 @@ class ViewController: UIViewController, VirtualObjectManagerDelegate {
             utterance.rate = 0.6
             synth.speak(utterance)
         } catch {
-            os_log(.error, "Unexpeced error announcing something using AVSpeechEngine!")
+            print("Unexpeced error announcing something using AVSpeechEngine!")
         }
     }
     
@@ -363,14 +362,14 @@ extension ViewController : ARSCNViewDelegate {
     func session(_ session: ARSession, cameraDidChangeTrackingState camera: ARCamera) {
         switch camera.trackingState {
         case .notAvailable:
-            os_log(.error, "AR session is not available")
+            print("AR session is not available")
         case .limited:
-            os_log(.error, "AR session is limited")
+            print("AR session is limited")
             // After 10 seconds of limited quality, restart the session
             sessionRestartTimer = Timer.scheduledTimer(withTimeInterval: 10.0, repeats: false, block: { _ in
             })
         case .normal:
-            os_log(.debug, "AR session is normal")
+            print("AR session is normal")
             if sessionRestartTimer != nil {
                 sessionRestartTimer!.invalidate()
                 sessionRestartTimer = nil
