@@ -49,6 +49,9 @@ class ViewController: UIViewController, VirtualObjectManagerDelegate {
     /// Object to find
     let objectToFind = "cup"
     
+    var hapticTimer: Timer!
+
+    
     /// The main view that captures the AR scene and controls world tracking
     @IBOutlet weak var sceneView: ARSCNView!
     
@@ -75,6 +78,7 @@ class ViewController: UIViewController, VirtualObjectManagerDelegate {
         DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
             self.postNewJob(objectToFind: self.objectToFind)
         })
+        hapticTimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: (#selector(getHapticFeedback)), userInfo: nil, repeats: true)
     }
     
     /// Called when the view appears on the screen.  Above what is done by the super class, this function does the following.
@@ -226,6 +230,7 @@ class ViewController: UIViewController, VirtualObjectManagerDelegate {
             let negZAxis = curLocation.transformMatrix*Vector3.init(0.0, 0.0, -1.0)
             let angleDiff = acos(negZAxis.dot(cameraToObject))
             
+//            print("angle diff \(negZAxis)")
             if abs(angleDiff) < 0.2 {
                 shouldGiveFeedback = true
                 var distanceToAnnounce: Float?
@@ -233,6 +238,12 @@ class ViewController: UIViewController, VirtualObjectManagerDelegate {
                 let distanceString = String(format: "%.1f feet", (distanceToAnnounce!*100.0/2.54/12.0))
                 objectsInRange.append(virtualObject)
                 objectDistanceStrings.append(distanceString)
+            } else if negZAxis.x < 0 {
+                objectsInRange.append(virtualObject)
+                objectDistanceStrings.append("Rotate right")
+            } else if negZAxis.x > 0 {
+                objectsInRange.append(virtualObject)
+                objectDistanceStrings.append("Rotate left")
             }
         }
         
