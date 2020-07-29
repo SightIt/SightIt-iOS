@@ -1,0 +1,27 @@
+PODS:
+  - VectorMath (0.4.1):
+    - VectorMath/Core (= 0.4.1)
+    - VectorMath/MapKit (= 0.4.1)
+    - VectorMath/Quartz (= 0.4.1)
+    - VectorMath/SceneKit (= 0.4.1)
+  - VectorMath/Core (0.4.1)
+  - VectorMath/MapKit (0.4.1):
+    - VectorMath/Core
+  - VectorMath/Quartz (0.4.1):
+    - VectorMath/Core
+  - VectorMath/SceneKit (0.4.1):
+    - VectorMath/Core
+
+DEPENDENCIES:
+  - VectorMath (~> 0.3)
+
+SPEC REPOS:
+  trunk:
+    - VectorMath
+
+SPEC CHECKSUMS:
+  VectorMath: 55dded3a69e5061add78d06275561bc25ead2999
+
+PODFILE CHECKSUM: 8a09dc65da7d44521e86f7d5186625deebd2d9b6
+
+COCOAPODS: 1.9.3

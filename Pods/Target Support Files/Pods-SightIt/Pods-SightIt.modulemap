@@ -1,0 +1,6 @@
+framework module Pods_SightIt {
+  umbrella header "Pods-SightIt-umbrella.h"
+
+  export *
+  module * { export * }
+}

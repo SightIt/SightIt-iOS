@@ -1,0 +1,1012 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1CC887C109DD19F40C03E585A1099F4C /* Pods-SightItTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B091A2E4376052830E6A5A24411A1857 /* Pods-SightItTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2E3BA2DC7FCAF052EA72675B75BE81AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		303F2D6A130096DD011B032FE1844512 /* VectorMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595A2FE4B5F11150956534EEA3428CCB /* VectorMath.swift */; };
+		32A79703B3947DE18DD247DC7190EE18 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		4E5C5AC333152AC1E584C378CD0330B2 /* Pods-SightIt-SightItUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 648125B11323CEA25513E490D1AA1C88 /* Pods-SightIt-SightItUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4EFA47C7D6B65D5537BC27836BD31EFC /* VectorMath+SceneKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D16B4FC746314E5788F0600CCA2B00 /* VectorMath+SceneKit.swift */; };
+		5B5D145FB2D0A9A3D602A00AA2CB59AC /* Pods-SightIt-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FA20DF24FA682A186949CDFB3FF4EA /* Pods-SightIt-dummy.m */; };
+		67BBDCBC597FD4C9B9A1BF11AC03DD8D /* Pods-SightIt-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 483466A51A30844330D1997F97D413FC /* Pods-SightIt-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6A2A507538AA5C94903C878B98B8C86D /* VectorMath+MapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3942A9BB853E365D7AAA83250A99C2D /* VectorMath+MapKit.swift */; };
+		8697ADA0987384C3593127FD55F39A28 /* VectorMath-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F8664C5724FAADE7B53C9DF46C306F58 /* VectorMath-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8CC2698EB543547C05ABA030BE4C4563 /* Pods-SightIt-SightItUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F2D20D2BE54A301A2A266FB60AC9F1 /* Pods-SightIt-SightItUITests-dummy.m */; };
+		CB8332DBC6AAE8CCBD54A1B96BF0CA5F /* VectorMath-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F501CFF9102641F1E3238A8D659042 /* VectorMath-dummy.m */; };
+		E16EB9DAC4CC52BD97194A22384F023A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		E6ABE75366991B1D7B30DA1EA28AB445 /* VectorMath+Quartz.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB099A78C23124AB43B6EB73FC2EE835 /* VectorMath+Quartz.swift */; };
+		E98F3FCB25B657E791496F3102D84ACC /* Pods-SightItTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8090A5C57570AA1B286DFF0B3ACAE3 /* Pods-SightItTests-dummy.m */; };
+		F252ECBE5929A7816F3FAA498780034B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1464F29ACA165CF3065A148129031983 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE7CEEEF0CBC326FAA86001D6D98C89B;
+			remoteInfo = "Pods-SightIt";
+		};
+		9A436B0CB33C2DF5B8CF2BB429D1E358 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5F08B70E2487E2AAC8093421F7FE6C62;
+			remoteInfo = VectorMath;
+		};
+		FFB0BDF212EA31F248C1D500090241E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5F08B70E2487E2AAC8093421F7FE6C62;
+			remoteInfo = VectorMath;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0ADAD2D61CE3FA717D1A563C77AD50F9 /* Pods-SightIt-SightItUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SightIt-SightItUITests.release.xcconfig"; sourceTree = "<group>"; };
+		1281ED6533F2E420519EBF6B680E4C01 /* Pods-SightItTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SightItTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		136005156B71715A59BB55BFEA34D626 /* Pods-SightItTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SightItTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		20D16B4FC746314E5788F0600CCA2B00 /* VectorMath+SceneKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "VectorMath+SceneKit.swift"; path = "VectorMath/VectorMath+SceneKit.swift"; sourceTree = "<group>"; };
+		28F501CFF9102641F1E3238A8D659042 /* VectorMath-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "VectorMath-dummy.m"; sourceTree = "<group>"; };
+		2BAF611DCD9DDAD428FF5BFB67623BE4 /* Pods_SightItTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SightItTests.framework; path = "Pods-SightItTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		37077E28B2CF86985DFCE145C1B68A02 /* Pods_SightIt_SightItUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SightIt_SightItUITests.framework; path = "Pods-SightIt-SightItUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DFDC8FC71CA60F2F0920C93B39684A9 /* Pods-SightIt-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SightIt-frameworks.sh"; sourceTree = "<group>"; };
+		3F84DA410F0CE8AC5E5448CA6EB70F12 /* Pods-SightIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SightIt.release.xcconfig"; sourceTree = "<group>"; };
+		46AE579B0500A780672C396D4B0F69B7 /* Pods-SightIt-SightItUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SightIt-SightItUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		483466A51A30844330D1997F97D413FC /* Pods-SightIt-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SightIt-umbrella.h"; sourceTree = "<group>"; };
+		4BE937F6098505FF2E4BFC02C96C6DD9 /* VectorMath.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = VectorMath.debug.xcconfig; sourceTree = "<group>"; };
+		595A2FE4B5F11150956534EEA3428CCB /* VectorMath.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VectorMath.swift; path = VectorMath/VectorMath.swift; sourceTree = "<group>"; };
+		5FE5B7AB8148AE5E4530944B15534607 /* Pods_SightIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SightIt.framework; path = "Pods-SightIt.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		648125B11323CEA25513E490D1AA1C88 /* Pods-SightIt-SightItUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SightIt-SightItUITests-umbrella.h"; sourceTree = "<group>"; };
+		66A7851760A8AB0E8A5B37B13D02F27C /* Pods-SightIt-SightItUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SightIt-SightItUITests-Info.plist"; sourceTree = "<group>"; };
+		677B67675FE707E533071C9EEBD568FE /* Pods-SightIt-SightItUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SightIt-SightItUITests-frameworks.sh"; sourceTree = "<group>"; };
+		6A071FA10C9D5932F1017704A54BF4E3 /* Pods-SightItTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SightItTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6B8090A5C57570AA1B286DFF0B3ACAE3 /* Pods-SightItTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SightItTests-dummy.m"; sourceTree = "<group>"; };
+		6B8A85912DDEDC1DD6CECD766DCD3ABD /* Pods-SightIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SightIt.debug.xcconfig"; sourceTree = "<group>"; };
+		7E1DA00D8CAEDD4607F705E0573875DD /* Pods-SightIt-SightItUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SightIt-SightItUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8125AB367189F854D430FAC8D83E3BEF /* VectorMath-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "VectorMath-Info.plist"; sourceTree = "<group>"; };
+		93D7C196B284CB40E4E1A1E918226269 /* Pods-SightItTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SightItTests-Info.plist"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9EA536E51C4C8B5CB431E382676D6C0E /* VectorMath-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "VectorMath-prefix.pch"; sourceTree = "<group>"; };
+		A06DD95AA30108A41391D385FEF83B58 /* VectorMath.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = VectorMath.release.xcconfig; sourceTree = "<group>"; };
+		AD3DD478632DCE12EC792CA87C31607F /* Pods-SightItTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SightItTests.modulemap"; sourceTree = "<group>"; };
+		B091A2E4376052830E6A5A24411A1857 /* Pods-SightItTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SightItTests-umbrella.h"; sourceTree = "<group>"; };
+		BCAD32E8DB7C68C0498CA188903FED23 /* Pods-SightIt-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SightIt-Info.plist"; sourceTree = "<group>"; };
+		CFF942529400F4E5CF5CAA9F39B05B2E /* VectorMath.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = VectorMath.framework; path = VectorMath.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3942A9BB853E365D7AAA83250A99C2D /* VectorMath+MapKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "VectorMath+MapKit.swift"; path = "VectorMath/VectorMath+MapKit.swift"; sourceTree = "<group>"; };
+		D4946519BAB82A3AA2B2D6AB8C6B5168 /* VectorMath.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = VectorMath.modulemap; sourceTree = "<group>"; };
+		E7FA20DF24FA682A186949CDFB3FF4EA /* Pods-SightIt-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SightIt-dummy.m"; sourceTree = "<group>"; };
+		E8F2D20D2BE54A301A2A266FB60AC9F1 /* Pods-SightIt-SightItUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SightIt-SightItUITests-dummy.m"; sourceTree = "<group>"; };
+		EB099A78C23124AB43B6EB73FC2EE835 /* VectorMath+Quartz.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "VectorMath+Quartz.swift"; path = "VectorMath/VectorMath+Quartz.swift"; sourceTree = "<group>"; };
+		F34A8FFEB435A0610B1C11A1634EDCD2 /* Pods-SightIt-SightItUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SightIt-SightItUITests.modulemap"; sourceTree = "<group>"; };
+		F4C5F11FA8B1F8E867707DE8ED2D6F0D /* Pods-SightIt.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SightIt.modulemap"; sourceTree = "<group>"; };
+		F4DD724956DAC837D8DDF86317F58295 /* Pods-SightItTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SightItTests.release.xcconfig"; sourceTree = "<group>"; };
+		F8664C5724FAADE7B53C9DF46C306F58 /* VectorMath-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "VectorMath-umbrella.h"; sourceTree = "<group>"; };
+		FA022ABADBFBCBF52B01F543D1280EB5 /* Pods-SightIt-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SightIt-acknowledgements.markdown"; sourceTree = "<group>"; };
+		FB53F5A6BC2DB509B5032894786C163F /* Pods-SightIt-SightItUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SightIt-SightItUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		FF7B65547C140364D29A7157D123E846 /* Pods-SightIt-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SightIt-acknowledgements.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		19688195EF7E4B3956B0E877DFB56EE3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E16EB9DAC4CC52BD97194A22384F023A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D7AE1FFE271596C49A85CBF8826E1E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32A79703B3947DE18DD247DC7190EE18 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C18FBA1D1E24F743ABDC2634E319CA1D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E3BA2DC7FCAF052EA72675B75BE81AD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC3B6B065451A44918BB8CAFBA694D6D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F252ECBE5929A7816F3FAA498780034B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		125145D4F170B46C469B5B4B08EF92FE /* Pods-SightItTests */ = {
+			isa = PBXGroup;
+			children = (
+				AD3DD478632DCE12EC792CA87C31607F /* Pods-SightItTests.modulemap */,
+				136005156B71715A59BB55BFEA34D626 /* Pods-SightItTests-acknowledgements.markdown */,
+				1281ED6533F2E420519EBF6B680E4C01 /* Pods-SightItTests-acknowledgements.plist */,
+				6B8090A5C57570AA1B286DFF0B3ACAE3 /* Pods-SightItTests-dummy.m */,
+				93D7C196B284CB40E4E1A1E918226269 /* Pods-SightItTests-Info.plist */,
+				B091A2E4376052830E6A5A24411A1857 /* Pods-SightItTests-umbrella.h */,
+				6A071FA10C9D5932F1017704A54BF4E3 /* Pods-SightItTests.debug.xcconfig */,
+				F4DD724956DAC837D8DDF86317F58295 /* Pods-SightItTests.release.xcconfig */,
+			);
+			name = "Pods-SightItTests";
+			path = "Target Support Files/Pods-SightItTests";
+			sourceTree = "<group>";
+		};
+		2B9BA7E4A2866D87188DA807AE9CC2D5 /* VectorMath */ = {
+			isa = PBXGroup;
+			children = (
+				559D04B098367563F2CE73C233F72A66 /* Core */,
+				58003D6DF406B313CA7BF2FAFADB4444 /* MapKit */,
+				CDED68B36D49F4629125534A62444002 /* Quartz */,
+				5EAAA79FAD8621C722F479FC94A888D1 /* SceneKit */,
+				95159D53C84B0140BCBC92385F284234 /* Support Files */,
+			);
+			name = VectorMath;
+			path = VectorMath;
+			sourceTree = "<group>";
+		};
+		424C29FCD1A59D2801F6C9F8B95945A1 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A97A1EC60D0EF95A94C6A21991F7A40E /* Pods-SightIt */,
+				5A16D43C08BE47EDDC1CCBC8826B1543 /* Pods-SightIt-SightItUITests */,
+				125145D4F170B46C469B5B4B08EF92FE /* Pods-SightItTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		559D04B098367563F2CE73C233F72A66 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				595A2FE4B5F11150956534EEA3428CCB /* VectorMath.swift */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		58003D6DF406B313CA7BF2FAFADB4444 /* MapKit */ = {
+			isa = PBXGroup;
+			children = (
+				D3942A9BB853E365D7AAA83250A99C2D /* VectorMath+MapKit.swift */,
+			);
+			name = MapKit;
+			sourceTree = "<group>";
+		};
+		5A16D43C08BE47EDDC1CCBC8826B1543 /* Pods-SightIt-SightItUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F34A8FFEB435A0610B1C11A1634EDCD2 /* Pods-SightIt-SightItUITests.modulemap */,
+				FB53F5A6BC2DB509B5032894786C163F /* Pods-SightIt-SightItUITests-acknowledgements.markdown */,
+				46AE579B0500A780672C396D4B0F69B7 /* Pods-SightIt-SightItUITests-acknowledgements.plist */,
+				E8F2D20D2BE54A301A2A266FB60AC9F1 /* Pods-SightIt-SightItUITests-dummy.m */,
+				677B67675FE707E533071C9EEBD568FE /* Pods-SightIt-SightItUITests-frameworks.sh */,
+				66A7851760A8AB0E8A5B37B13D02F27C /* Pods-SightIt-SightItUITests-Info.plist */,
+				648125B11323CEA25513E490D1AA1C88 /* Pods-SightIt-SightItUITests-umbrella.h */,
+				7E1DA00D8CAEDD4607F705E0573875DD /* Pods-SightIt-SightItUITests.debug.xcconfig */,
+				0ADAD2D61CE3FA717D1A563C77AD50F9 /* Pods-SightIt-SightItUITests.release.xcconfig */,
+			);
+			name = "Pods-SightIt-SightItUITests";
+			path = "Target Support Files/Pods-SightIt-SightItUITests";
+			sourceTree = "<group>";
+		};
+		5EAAA79FAD8621C722F479FC94A888D1 /* SceneKit */ = {
+			isa = PBXGroup;
+			children = (
+				20D16B4FC746314E5788F0600CCA2B00 /* VectorMath+SceneKit.swift */,
+			);
+			name = SceneKit;
+			sourceTree = "<group>";
+		};
+		95159D53C84B0140BCBC92385F284234 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D4946519BAB82A3AA2B2D6AB8C6B5168 /* VectorMath.modulemap */,
+				28F501CFF9102641F1E3238A8D659042 /* VectorMath-dummy.m */,
+				8125AB367189F854D430FAC8D83E3BEF /* VectorMath-Info.plist */,
+				9EA536E51C4C8B5CB431E382676D6C0E /* VectorMath-prefix.pch */,
+				F8664C5724FAADE7B53C9DF46C306F58 /* VectorMath-umbrella.h */,
+				4BE937F6098505FF2E4BFC02C96C6DD9 /* VectorMath.debug.xcconfig */,
+				A06DD95AA30108A41391D385FEF83B58 /* VectorMath.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/VectorMath";
+			sourceTree = "<group>";
+		};
+		A97A1EC60D0EF95A94C6A21991F7A40E /* Pods-SightIt */ = {
+			isa = PBXGroup;
+			children = (
+				F4C5F11FA8B1F8E867707DE8ED2D6F0D /* Pods-SightIt.modulemap */,
+				FA022ABADBFBCBF52B01F543D1280EB5 /* Pods-SightIt-acknowledgements.markdown */,
+				FF7B65547C140364D29A7157D123E846 /* Pods-SightIt-acknowledgements.plist */,
+				E7FA20DF24FA682A186949CDFB3FF4EA /* Pods-SightIt-dummy.m */,
+				3DFDC8FC71CA60F2F0920C93B39684A9 /* Pods-SightIt-frameworks.sh */,
+				BCAD32E8DB7C68C0498CA188903FED23 /* Pods-SightIt-Info.plist */,
+				483466A51A30844330D1997F97D413FC /* Pods-SightIt-umbrella.h */,
+				6B8A85912DDEDC1DD6CECD766DCD3ABD /* Pods-SightIt.debug.xcconfig */,
+				3F84DA410F0CE8AC5E5448CA6EB70F12 /* Pods-SightIt.release.xcconfig */,
+			);
+			name = "Pods-SightIt";
+			path = "Target Support Files/Pods-SightIt";
+			sourceTree = "<group>";
+		};
+		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		CDED68B36D49F4629125534A62444002 /* Quartz */ = {
+			isa = PBXGroup;
+			children = (
+				EB099A78C23124AB43B6EB73FC2EE835 /* VectorMath+Quartz.swift */,
+			);
+			name = Quartz;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				E2E64869D0C8F96FFC19DF072F491D54 /* Pods */,
+				CF80FA3A5C1252279755A4626CD8BD65 /* Products */,
+				424C29FCD1A59D2801F6C9F8B95945A1 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		CF80FA3A5C1252279755A4626CD8BD65 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5FE5B7AB8148AE5E4530944B15534607 /* Pods_SightIt.framework */,
+				37077E28B2CF86985DFCE145C1B68A02 /* Pods_SightIt_SightItUITests.framework */,
+				2BAF611DCD9DDAD428FF5BFB67623BE4 /* Pods_SightItTests.framework */,
+				CFF942529400F4E5CF5CAA9F39B05B2E /* VectorMath.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E2E64869D0C8F96FFC19DF072F491D54 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2B9BA7E4A2866D87188DA807AE9CC2D5 /* VectorMath */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1AD020526E7C1AD80987CDB93F74C51F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E5C5AC333152AC1E584C378CD0330B2 /* Pods-SightIt-SightItUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A5ABF3E359D65A356D1C03CC3FF8B5A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67BBDCBC597FD4C9B9A1BF11AC03DD8D /* Pods-SightIt-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C07A5A0818B4EBC4B6D0E588A9F15EF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CC887C109DD19F40C03E585A1099F4C /* Pods-SightItTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC12E3D254C62D3451435AD9F6BB4897 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8697ADA0987384C3593127FD55F39A28 /* VectorMath-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		3E786DABE9B5F97DCDF2AA33C0AD8A01 /* Pods-SightIt-SightItUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 768CCA1E0F80AEF4FD3E5A2864CF85CE /* Build configuration list for PBXNativeTarget "Pods-SightIt-SightItUITests" */;
+			buildPhases = (
+				1AD020526E7C1AD80987CDB93F74C51F /* Headers */,
+				BB457AD17749CCC8E4DDCC5CA7DF1C37 /* Sources */,
+				C18FBA1D1E24F743ABDC2634E319CA1D /* Frameworks */,
+				D48A5AF1F3C5C92CE1B18AB98E80CFBD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE7202C0A04719BF49E890CC5F5B2760 /* PBXTargetDependency */,
+			);
+			name = "Pods-SightIt-SightItUITests";
+			productName = "Pods-SightIt-SightItUITests";
+			productReference = 37077E28B2CF86985DFCE145C1B68A02 /* Pods_SightIt_SightItUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5F08B70E2487E2AAC8093421F7FE6C62 /* VectorMath */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 287B79FFAE5313D96988B1983EA41396 /* Build configuration list for PBXNativeTarget "VectorMath" */;
+			buildPhases = (
+				EC12E3D254C62D3451435AD9F6BB4897 /* Headers */,
+				C508FE2C6E4E150CFD99A7046DBC008C /* Sources */,
+				2D7AE1FFE271596C49A85CBF8826E1E5 /* Frameworks */,
+				462287E1981460AC84FE087451CD0F09 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VectorMath;
+			productName = VectorMath;
+			productReference = CFF942529400F4E5CF5CAA9F39B05B2E /* VectorMath.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		AD8D566A68C3DD038FD1DF2718E852D4 /* Pods-SightItTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37AE42311205BA110D6B03242FB6E70F /* Build configuration list for PBXNativeTarget "Pods-SightItTests" */;
+			buildPhases = (
+				6C07A5A0818B4EBC4B6D0E588A9F15EF /* Headers */,
+				BB93DEB1C57E27CB9B3252306555F3E7 /* Sources */,
+				19688195EF7E4B3956B0E877DFB56EE3 /* Frameworks */,
+				5719A331B691EF53A19887AD270E45CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				109CD1C7BC4B583FFA3910E49FE7AAFB /* PBXTargetDependency */,
+			);
+			name = "Pods-SightItTests";
+			productName = "Pods-SightItTests";
+			productReference = 2BAF611DCD9DDAD428FF5BFB67623BE4 /* Pods_SightItTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BE7CEEEF0CBC326FAA86001D6D98C89B /* Pods-SightIt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E66C2459AE71C7F223D755C1A454126 /* Build configuration list for PBXNativeTarget "Pods-SightIt" */;
+			buildPhases = (
+				2A5ABF3E359D65A356D1C03CC3FF8B5A /* Headers */,
+				AB912782421622364FB0B3888AA0C9E4 /* Sources */,
+				FC3B6B065451A44918BB8CAFBA694D6D /* Frameworks */,
+				4E9CC1E324F3309C980CC10DE505C2FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				31BFDB482B1EFC2C2B53BD0BFBB7E5DF /* PBXTargetDependency */,
+			);
+			name = "Pods-SightIt";
+			productName = "Pods-SightIt";
+			productReference = 5FE5B7AB8148AE5E4530944B15534607 /* Pods_SightIt.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = CF80FA3A5C1252279755A4626CD8BD65 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BE7CEEEF0CBC326FAA86001D6D98C89B /* Pods-SightIt */,
+				3E786DABE9B5F97DCDF2AA33C0AD8A01 /* Pods-SightIt-SightItUITests */,
+				AD8D566A68C3DD038FD1DF2718E852D4 /* Pods-SightItTests */,
+				5F08B70E2487E2AAC8093421F7FE6C62 /* VectorMath */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		462287E1981460AC84FE087451CD0F09 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E9CC1E324F3309C980CC10DE505C2FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5719A331B691EF53A19887AD270E45CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D48A5AF1F3C5C92CE1B18AB98E80CFBD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AB912782421622364FB0B3888AA0C9E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B5D145FB2D0A9A3D602A00AA2CB59AC /* Pods-SightIt-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB457AD17749CCC8E4DDCC5CA7DF1C37 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CC2698EB543547C05ABA030BE4C4563 /* Pods-SightIt-SightItUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB93DEB1C57E27CB9B3252306555F3E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E98F3FCB25B657E791496F3102D84ACC /* Pods-SightItTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C508FE2C6E4E150CFD99A7046DBC008C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A2A507538AA5C94903C878B98B8C86D /* VectorMath+MapKit.swift in Sources */,
+				E6ABE75366991B1D7B30DA1EA28AB445 /* VectorMath+Quartz.swift in Sources */,
+				4EFA47C7D6B65D5537BC27836BD31EFC /* VectorMath+SceneKit.swift in Sources */,
+				CB8332DBC6AAE8CCBD54A1B96BF0CA5F /* VectorMath-dummy.m in Sources */,
+				303F2D6A130096DD011B032FE1844512 /* VectorMath.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		109CD1C7BC4B583FFA3910E49FE7AAFB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-SightIt";
+			target = BE7CEEEF0CBC326FAA86001D6D98C89B /* Pods-SightIt */;
+			targetProxy = 1464F29ACA165CF3065A148129031983 /* PBXContainerItemProxy */;
+		};
+		31BFDB482B1EFC2C2B53BD0BFBB7E5DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = VectorMath;
+			target = 5F08B70E2487E2AAC8093421F7FE6C62 /* VectorMath */;
+			targetProxy = 9A436B0CB33C2DF5B8CF2BB429D1E358 /* PBXContainerItemProxy */;
+		};
+		CE7202C0A04719BF49E890CC5F5B2760 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = VectorMath;
+			target = 5F08B70E2487E2AAC8093421F7FE6C62 /* VectorMath */;
+			targetProxy = FFB0BDF212EA31F248C1D500090241E8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		02D1CC93AF4BB14BC2AE79F6B528ADA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F84DA410F0CE8AC5E5448CA6EB70F12 /* Pods-SightIt.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SightIt/Pods-SightIt-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SightIt/Pods-SightIt.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		07848959F7142541F40A623BD39A3022 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4BE937F6098505FF2E4BFC02C96C6DD9 /* VectorMath.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/VectorMath/VectorMath-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/VectorMath/VectorMath-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/VectorMath/VectorMath.modulemap";
+				PRODUCT_MODULE_NAME = VectorMath;
+				PRODUCT_NAME = VectorMath;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		13967C5C8F4B10B3EE4D6C208A0A7BEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		2DDD8FBA30D8D76270D9C24A4DA9EC64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A06DD95AA30108A41391D385FEF83B58 /* VectorMath.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/VectorMath/VectorMath-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/VectorMath/VectorMath-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/VectorMath/VectorMath.modulemap";
+				PRODUCT_MODULE_NAME = VectorMath;
+				PRODUCT_NAME = VectorMath;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		732AFCE50A573CFEDE19F6B799832D1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4DD724956DAC837D8DDF86317F58295 /* Pods-SightItTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SightItTests/Pods-SightItTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SightItTests/Pods-SightItTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8322F642F0E1DB9D18DA32B8D9BD2446 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E1DA00D8CAEDD4607F705E0573875DD /* Pods-SightIt-SightItUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SightIt-SightItUITests/Pods-SightIt-SightItUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SightIt-SightItUITests/Pods-SightIt-SightItUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		871B6E28ABA34DAE69824AB9D22D3B7D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		872217AB823963AA76180418F9A26E97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A071FA10C9D5932F1017704A54BF4E3 /* Pods-SightItTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SightItTests/Pods-SightItTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SightItTests/Pods-SightItTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9970F921B6B73B4D6F68DAE2F7C72E28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B8A85912DDEDC1DD6CECD766DCD3ABD /* Pods-SightIt.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SightIt/Pods-SightIt-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SightIt/Pods-SightIt.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B672030B728739B6064337DAEC89C4D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0ADAD2D61CE3FA717D1A563C77AD50F9 /* Pods-SightIt-SightItUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SightIt-SightItUITests/Pods-SightIt-SightItUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SightIt-SightItUITests/Pods-SightIt-SightItUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		287B79FFAE5313D96988B1983EA41396 /* Build configuration list for PBXNativeTarget "VectorMath" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07848959F7142541F40A623BD39A3022 /* Debug */,
+				2DDD8FBA30D8D76270D9C24A4DA9EC64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		37AE42311205BA110D6B03242FB6E70F /* Build configuration list for PBXNativeTarget "Pods-SightItTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				872217AB823963AA76180418F9A26E97 /* Debug */,
+				732AFCE50A573CFEDE19F6B799832D1E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13967C5C8F4B10B3EE4D6C208A0A7BEB /* Debug */,
+				871B6E28ABA34DAE69824AB9D22D3B7D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		768CCA1E0F80AEF4FD3E5A2864CF85CE /* Build configuration list for PBXNativeTarget "Pods-SightIt-SightItUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8322F642F0E1DB9D18DA32B8D9BD2446 /* Debug */,
+				B672030B728739B6064337DAEC89C4D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8E66C2459AE71C7F223D755C1A454126 /* Build configuration list for PBXNativeTarget "Pods-SightIt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9970F921B6B73B4D6F68DAE2F7C72E28 /* Debug */,
+				02D1CC93AF4BB14BC2AE79F6B528ADA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
