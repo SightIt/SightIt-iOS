@@ -69,7 +69,7 @@ class ViewController: UIViewController, VirtualObjectManagerDelegate {
         super.viewDidLoad()
         setupScene()
         lastGeneratedHapticFeedback = Date()
-
+        
         /// For now the app will start finding the object 5 seconds upon start
         announce(announcement: "Started looking for \(objectToFind)")
         DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
@@ -142,7 +142,9 @@ class ViewController: UIViewController, VirtualObjectManagerDelegate {
             }
             
             print("Receiving best prediction")
-            self.placeVirtualObject(pixelLocation: CGPoint(x: CGFloat(x), y: CGFloat(y)), overrideFrameTransform: currentTransform, objectToFind: self.objectToFind)
+            let GFloatx = self.sceneView.bounds.width * CGFloat(x)
+            let GFloaty = self.sceneView.bounds.height * CGFloat(y)
+            self.placeVirtualObject(pixelLocation: CGPoint(x: GFloatx, y: GFloaty), overrideFrameTransform: currentTransform, objectToFind: self.objectToFind)
         }
     }
     
@@ -205,9 +207,9 @@ class ViewController: UIViewController, VirtualObjectManagerDelegate {
         var objectsInRange = [VirtualObject]()
         var objectDistanceStrings = [String]()
         var shouldGiveFeedback: Bool = false
-
+        
         let curLocation = getRealCoordinates(currentFrame: frame)
-
+        
         for virtualObject in virtualObjectManager.virtualObjects {
             let referencePosition = virtualObject.cubeNode.convertPosition(SCNVector3(x: curLocation.location.x, y: curLocation.location.y, z: curLocation.location.z), from:sceneView.scene.rootNode)
             let distanceToObject = sqrt(referencePosition.x*referencePosition.x +
@@ -312,7 +314,7 @@ class ViewController: UIViewController, VirtualObjectManagerDelegate {
         if synth.isSpeaking {
             return
         }
-
+        
         let audioSession = AVAudioSession.sharedInstance()
         do {
             try audioSession.setCategory(AVAudioSession.Category.playback)
