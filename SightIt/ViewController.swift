@@ -120,7 +120,7 @@ class ViewController: UIViewController, VirtualObjectManagerDelegate {
     func postNewJob(objectToFind: String) {
         resetTracking()
         self.snapshotTimer?.invalidate()
-        self.snapshotTimer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: (#selector(self.takeSnapshot(sender:))), userInfo: nil, repeats: true)
+        self.snapshotTimer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: (#selector(self.takeSnapshot(sender:))), userInfo: nil, repeats: true)
     }
     
     /// Take a snapshot of the scene and add it to most recently created job.
@@ -136,15 +136,18 @@ class ViewController: UIViewController, VirtualObjectManagerDelegate {
         let sceneImage = self.sceneView.snapshot()
         let jobID: String = Date().timeIntervalSince1970.description
         self.jobs[jobID] = JobInfo(cameraTransforms: [jobID: currentTransform], sceneImage: sceneImage, objectToFind: objectToFind)
-        objDetectionManager.detectObjects(image: sceneImage, objectToFind: ObjectIdentifier(rawValue: objectToFind)!) { (response, error) in
+        objDetectionManager.detectObjects(image: sceneImage, objectToFind: ObjectIdentifier(rawValue: objectToFind)!) { [weak self] (response, error) in
+            guard let self = self else { return }
             guard let prediction = response?.bestPrediction, let x = prediction.centerX, let y = prediction.centerY else {
                 return
             }
             
             print("Receiving best prediction")
-            let GFloatx = self.sceneView.bounds.width * CGFloat(x)
-            let GFloaty = self.sceneView.bounds.height * CGFloat(y)
-            self.placeVirtualObject(pixelLocation: CGPoint(x: GFloatx, y: GFloaty), overrideFrameTransform: currentTransform, objectToFind: self.objectToFind)
+            DispatchQueue.main.async {
+                let GFloatx = self.sceneView.bounds.width * CGFloat(x)
+                let GFloaty = self.sceneView.bounds.height * CGFloat(y)
+                self.placeVirtualObject(pixelLocation: CGPoint(x: GFloatx, y: GFloaty), overrideFrameTransform: currentTransform, objectToFind: self.objectToFind)
+            }
         }
     }
     
