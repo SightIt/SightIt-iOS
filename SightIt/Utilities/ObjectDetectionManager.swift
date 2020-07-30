@@ -2,7 +2,7 @@
 //  ObjectDetectionManager.swift
 //  SightIt
 //
-//  Created by admin on 7/27/20.
+//  Created by Khang Vu on 7/27/20.
 //  Copyright © 2020 SightIt. All rights reserved.
 //
 
